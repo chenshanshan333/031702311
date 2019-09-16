@@ -9,7 +9,6 @@
 using namespace std;
 int main()
 {
-
 	string quzhi(string a, string shengji, string shiji);
 
 	string str, json, str1, str2, shengji, shiji; // 行字符串缓存  
@@ -55,7 +54,11 @@ int main()
 			if (str != "\0")
 			{
 				//json 拼接
-
+				q = str.find(",");
+				if (q > -1)
+				{
+					str = str.substr(0, str.find("."));//去除. 
+				}
 				if (ai == 0)
 				{
 					json += "[";
@@ -81,7 +84,7 @@ int main()
 		cout << json << endl;
 	}
 	inFile.close();
-
+	system("pause");
 	//保存json文件
 
 	ofstream outFile;
@@ -92,7 +95,7 @@ int main()
 
 	}
 	outFile.close(); // 关闭文件   
-	system("pause");
+
 	return 0;
 }
 
@@ -127,9 +130,8 @@ string quzhi(string a, string shengji, string shiji)
 	string zdjq(string fg, string zd);
 	string zdjq1(string fg, string zd);
 
-	string c1, xm, dh, dz_s1, dz_s2, dz_s3, dz_s4, dz_s5, dz_s6, dz_s7, fg = ",", json, sj, sj1;
-	string s6_1, s6_2;
-	int s = 0, t, q, i, t1 = 0, t2 = -1, m = 0;
+	string c1, xm, dh, dz_s1, dz_s2, dz_s3, dz_s4, dz_s5, fg = ",", json, sj, sj1;
+	int s = 0, t, q, i, t1 = 0, m = 0;
 
 	//	cin>>a;
 	t = 0;i = 0;
@@ -335,7 +337,7 @@ string quzhi(string a, string shengji, string shiji)
 		}
 	}
 
-	//四级地址 区|镇 |乡 
+	//四级地址 街道|镇 |乡 
 
 	fg = "镇";
 	dz_s4 = zdjq(fg, a);
@@ -354,48 +356,11 @@ string quzhi(string a, string shengji, string shiji)
 		}
 	}
 
-	//5级地址 街|道 |巷|路 
+	//5级地址
 
+	dz_s5 = a;
 
-	fg = "街";
-	dz_s5 = zdjq(fg, a);
-	a = zdjq1(fg, a);
-	if ("" == dz_s5)
-	{
-
-		fg = "巷";
-		dz_s5 = zdjq(fg, a);
-		a = zdjq1(fg, a);
-		if ("" == dz_s5)
-		{
-			fg = "路";
-			dz_s5 = zdjq(fg, a);
-			a = zdjq1(fg, a);
-			if ("" == dz_s5)
-			{
-				fg = "道";
-				dz_s5 = zdjq(fg, a);
-				a = zdjq1(fg, a);
-			}
-		}
-	}
-
-
-	//6级地址
-	fg = "号";
-	dz_s6 = zdjq(fg, a);
-	a = zdjq1(fg, a);
-
-
-	q = -1;
-	q = a.find(".");
-	if (q > -1)
-	{
-		a = a.substr(0, a.find("."));//去除. 
-	}
-	dz_s7 = a;
-
-	json = "{\"姓名\":\"" + xm + "\",\"手机\":\"" + c1 + "\",\"地址\":[\"" + dz_s1 + "\",\"" + dz_s2 + "\",\"" + dz_s3 + "\",\"" + dz_s4 + "\",\"" + dz_s5 + "\",\"" + dz_s6 + "\",\"" + dz_s7 + "\"]}";
+	json = "{\"姓名\":\"" + xm + "\",\"手机\":\"" + c1 + "\",\"地址\":[\"" + dz_s1 + "\",\"" + dz_s2 + "\",\"" + dz_s3 + "\",\"" + dz_s4 + "\",\"" + dz_s5 + "\"]}";
 
 	return json;
 
