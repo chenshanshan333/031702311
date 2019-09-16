@@ -5,41 +5,41 @@
 #include<stdlib.h>
 #include<string.h>
 #include <sys/types.h>
-#include<fstream> // ÎÄ¼şÁ÷ 
+#include<fstream> // æ–‡ä»¶æµ 
 
 using namespace std;
 int main()
 {
 	string quzhi(string a, string shengji, string shiji);
 
-	string str, json, str1, str2, shengji, shiji; // ĞĞ×Ö·û´®»º´æ  
+	string str, json, str1, str2, shengji, shiji; // è¡Œå­—ç¬¦ä¸²ç¼“å­˜  
 	int ai = 0, q = -1;
 	//string json;
 
-	shengji = "ºÓ±±Ê¡£¬É½Î÷Ê¡£¬ÁÉÄşÊ¡£¬¼ªÁÖÊ¡£¬ºÚÁú½­Ê¡£¬½­ËÕÊ¡£¬Õã½­Ê¡£¬°²»ÕÊ¡£¬";
-	shengji = shengji + "¸£½¨Ê¡£¬½­Î÷Ê¡£¬É½¶«Ê¡£¬ºÓÄÏÊ¡£¬ºş±±Ê¡£¬ºşÄÏÊ¡£¬¹ã¶«Ê¡£¬º£ÄÏÊ¡£¬ËÄ´¨Ê¡£¬¹óÖİÊ¡£¬";
-	shengji = shengji + "ÔÆÄÏÊ¡£¬ÉÂÎ÷Ê¡£¬¸ÊËàÊ¡£¬Çàº£Ê¡£¬Ì¨ÍåÊ¡£¬ÄÚÃÉ¹Å×ÔÖÎÇø£¬¹ãÎ÷×³×å×ÔÖÎÇø£¬Î÷²Ø×ÔÖÎÇø£¬ÄşÏÄ»Ø×å×ÔÖÎÇø£¬ĞÂ½®Î¬Îá¶û×ÔÖÎÇø£¬Ïã¸ÛÌØ±ğĞĞÕşÇø£¬°ÄÃÅÌØ±ğĞĞÕşÇø";
+	shengji = "æ²³åŒ—çœï¼Œå±±è¥¿çœï¼Œè¾½å®çœï¼Œå‰æ—çœï¼Œé»‘é¾™æ±Ÿçœï¼Œæ±Ÿè‹çœï¼Œæµ™æ±Ÿçœï¼Œå®‰å¾½çœï¼Œ";
+	shengji = shengji + "ç¦å»ºçœï¼Œæ±Ÿè¥¿çœï¼Œå±±ä¸œçœï¼Œæ²³å—çœï¼Œæ¹–åŒ—çœï¼Œæ¹–å—çœï¼Œå¹¿ä¸œçœï¼Œæµ·å—çœï¼Œå››å·çœï¼Œè´µå·çœï¼Œ";
+	shengji = shengji + "äº‘å—çœï¼Œé™•è¥¿çœï¼Œç”˜è‚ƒçœï¼Œé’æµ·çœï¼Œå°æ¹¾çœï¼Œå†…è’™å¤è‡ªæ²»åŒºï¼Œå¹¿è¥¿å£®æ—è‡ªæ²»åŒºï¼Œè¥¿è—è‡ªæ²»åŒºï¼Œå®å¤å›æ—è‡ªæ²»åŒºï¼Œæ–°ç–†ç»´å¾å°”è‡ªæ²»åŒºï¼Œé¦™æ¸¯ç‰¹åˆ«è¡Œæ”¿åŒºï¼Œæ¾³é—¨ç‰¹åˆ«è¡Œæ”¿åŒº";
 
-	shiji = "¸£Öİ¡¢ÏÃÃÅ¡¢ÈªÖİ¡¢ÕÄÖİ¡¢ÁúÑÒ¡¢ÄşµÂ¡¢ÆÎÌï¡¢ÈıÃ÷¡¢ÄÏÆ½¡¢ÄÏ°²¡¢½¨ê±¡¢½¨Ñô¡¢ÓÀ°²¡¢½ú½­¡¢ÎäÒÄÉ½¡¢ÕÄÆ½¡¢Ê¯Ê¨¡¢¸£°²¡¢¸£Çå¡¢¸£¶¦¡¢ÉÛÎä¡¢³¤ÀÖ¡¢Áúº£";
+	shiji = "ç¦å·ã€å¦é—¨ã€æ³‰å·ã€æ¼³å·ã€é¾™å²©ã€å®å¾·ã€è†ç”°ã€ä¸‰æ˜ã€å—å¹³ã€å—å®‰ã€å»ºç“¯ã€å»ºé˜³ã€æ°¸å®‰ã€æ™‹æ±Ÿã€æ­¦å¤·å±±ã€æ¼³å¹³ã€çŸ³ç‹®ã€ç¦å®‰ã€ç¦æ¸…ã€ç¦é¼ã€é‚µæ­¦ã€é•¿ä¹ã€é¾™æµ·";
 	ifstream inFile;
-	infile.open(argc[1]); // ´ò¿ªÎÄ¼ş   
+	inFile.open(argc[1]); // æ‰“å¼€æ–‡ä»¶   
 	if (inFile.is_open())
-	{ // Èô³É¹¦´ò¿ªÎÄ¼ş   
-		while (!inFile.eof()) { // ÈôÎ´µ½ÎÄ¼ş½áÊø 
+	{ // è‹¥æˆåŠŸæ‰“å¼€æ–‡ä»¶   
+		while (!inFile.eof()) { // è‹¥æœªåˆ°æ–‡ä»¶ç»“æŸ 
 
-			getline(inFile, str, '\n'); // ¶ÁÈ¡Ò»ĞĞÄÚÈİ£¬²¢´æÈë»º´æstrÖĞ£¬'\n'±íÊ¾Ò»ĞĞ½áÊøµÄ»Ø³µ·û   
+			getline(inFile, str, '\n'); // è¯»å–ä¸€è¡Œå†…å®¹ï¼Œå¹¶å­˜å…¥ç¼“å­˜strä¸­ï¼Œ'\n'è¡¨ç¤ºä¸€è¡Œç»“æŸçš„å›è½¦ç¬¦   
 			if (str != "\0")
 			{
-				//json Æ´½Ó
+				//json æ‹¼æ¥
 				q = str.find(",");
 				if (q > -1)
 				{
-					str = str.substr(0, str.find("."));//È¥³ı. 
+					str = str.substr(0, str.find("."));//å»é™¤. 
 				}
 				if (ai == 0)
 				{
 					json += "[";
-					json += quzhi(str, shengji, shiji);//Êı¾İÇĞ¸î 
+					json += quzhi(str, shengji, shiji);//æ•°æ®åˆ‡å‰² 
 				}
 				else
 				{
@@ -53,16 +53,16 @@ int main()
 	}
 	if (str != "\0")
 	{
-		//json Æ´½Ó
+		//json æ‹¼æ¥
 		q = str.find(",");
 		if (q > -1)
 		{
-			str = str.substr(0, str.find("."));//È¥³ı. 
+			str = str.substr(0, str.find("."));//å»é™¤. 
 		}
 		if (ai == 0)
 		{
 			json = "[";
-			json += quzhi(str, shengji, shiji);//Êı¾İÇĞ¸î 
+			json += quzhi(str, shengji, shiji);//æ•°æ®åˆ‡å‰² 
 		}
 		else
 		{
@@ -82,20 +82,20 @@ int main()
 	//}
 //inFile.close();
 
-//±£´æjsonÎÄ¼ş
+//ä¿å­˜jsonæ–‡ä»¶
 
-	ofstream outfile;
-	outfile.open(argc[2]);
-	std::string str((std::istreambuf_iterator<char>(infile)),
-		std::istreambuf_iterator<char>());// ´´½¨ÎÄ¼ş   
+	ofstream outFile;
+	outFile.open(argc[2]);
+	std::string str((std::istreambuf_iterator<char>(inFile)),
+		std::istreambuf_iterator<char>());// åˆ›å»ºæ–‡ä»¶   
 	if (outFile.is_open())
-	{ // Èç¹û´´½¨³É¹¦£¬ÌîÈëÁ½ĞĞÄÚÈİ   
+	{ // å¦‚æœåˆ›å»ºæˆåŠŸï¼Œå¡«å…¥ä¸¤è¡Œå†…å®¹   
 
-		outFile << json << endl; // ÊäÈëÊı×ÖÖ±½ÓÕâÑù¡±Á÷¡°½øÈ¥¾ÍOKÁË    
+		outFile << json << endl; // è¾“å…¥æ•°å­—ç›´æ¥è¿™æ ·â€æµâ€œè¿›å»å°±OKäº†    
 
 	}
-	infile.close();
-	outFile.close(); // ¹Ø±ÕÎÄ¼ş   
+	inFile.close();
+	outFile.close(); // å…³é—­æ–‡ä»¶   
 
 	return 0;
 }
@@ -107,8 +107,8 @@ string zdjq(string fg, string zd)
 	q = zd.find(fg);
 	if (q > -1)
 	{
-		dz_jq = zd.substr(0, q + fg.length());//»ñÈ¡Ê¡ 
-		zd = zd.replace(0, q + fg.length(), "");//É¾µôÊ¡ 
+		dz_jq = zd.substr(0, q + fg.length());//è·å–çœ 
+		zd = zd.replace(0, q + fg.length(), "");//åˆ æ‰çœ 
 	}
 	return dz_jq;
 }
@@ -119,7 +119,7 @@ string zdjq1(string fg, string zd)
 	q = zd.find(fg);
 	if (q > -1)
 	{
-		zd = zd.replace(0, q + fg.length(), "");//É¾µôÊ¡ 
+		zd = zd.replace(0, q + fg.length(), "");//åˆ æ‰çœ 
 	}
 	return zd;
 }
@@ -139,40 +139,40 @@ string quzhi(string a, string shengji, string shiji)
 
 		m = a.substr(0, a.find("!"));
 		a = a.replace(0, a.find("!") + 1, "");
-		//cout<<"ĞÕÃû£º"<<xm<<"   ";
+		//cout<<"å§“åï¼š"<<xm<<"   ";
 	}
 	else
 	{
-		q = a.find("£¡");
+		q = a.find("ï¼");
 		if (q > -1)
 		{
 
-			m = a.substr(0, a.find("£¡"));
-			a = a.replace(0, a.find("£¡") + 2, "");
-			//cout<<"ĞÕÃû£º"<<xm<<"   ";
+			m = a.substr(0, a.find("ï¼"));
+			a = a.replace(0, a.find("ï¼") + 2, "");
+			//cout<<"å§“åï¼š"<<xm<<"   ";
 		}
 	}
-	//È¡ĞÕÃû 
+	//å–å§“å 
 	q = -1;
 	q = a.find(",");
 	if (q > -1)
 	{
 
-		xm = a.substr(0, a.find(","));//»ñÈ¡ĞÕÃû 
-		a = a.replace(0, a.find(",") + 1, "");//É¾µôĞÕÃû  
+		xm = a.substr(0, a.find(","));//è·å–å§“å 
+		a = a.replace(0, a.find(",") + 1, "");//åˆ æ‰å§“å  
 	}
 	else
 	{
-		q = a.find("£¬");
+		q = a.find("ï¼Œ");
 		if (q > -1)
 		{
-			//	q= a.find("£¬")£»
-			xm = a.substr(0, a.find("£¬"));//»ñÈ¡ĞÕÃû 
-			a = a.replace(0, a.find("£¬") + 2, "");//É¾µôĞÕÃû  
-			//cout<<"ĞÕÃû1£º"<<xm<<"   ";
+			//	q= a.find("ï¼Œ")ï¼›
+			xm = a.substr(0, a.find("ï¼Œ"));//è·å–å§“å 
+			a = a.replace(0, a.find("ï¼Œ") + 2, "");//åˆ æ‰å§“å  
+			//cout<<"å§“å1ï¼š"<<xm<<"   ";
 		}
 	}
-	//È¡µç»° 
+	//å–ç”µè¯ 
 	while (a[i] != '.')
 	{
 		if (a[i] >= '0'&&a[i] <= '9')
@@ -188,8 +188,8 @@ string quzhi(string a, string shengji, string shiji)
 		{
 			if (t > 6)
 			{
-				c1 = a.substr(t1, t);//»ñÈ¡µØÖ· 
-				a = a.replace(t1, t, "");//É¾µôµØÖ·ÖĞµÄµç»° 
+				c1 = a.substr(t1, t);//è·å–åœ°å€ 
+				a = a.replace(t1, t, "");//åˆ æ‰åœ°å€ä¸­çš„ç”µè¯ 
 				break;
 			}
 			else
@@ -201,20 +201,20 @@ string quzhi(string a, string shengji, string shiji)
 	}
 
 
-	//È¡µØÖ·
-	//Ò»¼¶ £ºÊ¡ ¡¢×ÔÖÎÇø 
-	fg = "Ê¡";
+	//å–åœ°å€
+	//ä¸€çº§ ï¼šçœ ã€è‡ªæ²»åŒº 
+	fg = "çœ";
 	dz_s1 = zdjq(fg, a);
 	a = zdjq1(fg, a);
-	//cout<<"Ê¡1£º"<<dz_s1<<"   "<<"µØÖ·1£º"<<a<<"   ";
+	//cout<<"çœ1ï¼š"<<dz_s1<<"   "<<"åœ°å€1ï¼š"<<a<<"   ";
 	if ("" == dz_s1)
 	{
-		fg = "×ÔÖÎÇø";
+		fg = "è‡ªæ²»åŒº";
 		dz_s1 = zdjq(fg, a);
 		a = zdjq1(fg, a);
 		if ("" == dz_s1)
 		{
-			fg = "ÌØ±ğĞĞÕşÇø";
+			fg = "ç‰¹åˆ«è¡Œæ”¿åŒº";
 			dz_s1 = zdjq(fg, a);
 			a = zdjq1(fg, a);
 		}
@@ -230,8 +230,8 @@ string quzhi(string a, string shengji, string shiji)
 			//cout<< "  shengji:"<<sj <<"   "<<q  ;
 			if (q > -1)
 			{
-				dz_s1 = a.substr(0, sj.length()) + "Ê¡";//»ñÈ¡Ê¡ 
-				a = a.replace(0, sj.length(), "");//É¾µôÊ¡ 
+				dz_s1 = a.substr(0, sj.length()) + "çœ";//è·å–çœ 
+				a = a.replace(0, sj.length(), "");//åˆ æ‰çœ 
 				break;
 			}
 			i++;
@@ -239,31 +239,31 @@ string quzhi(string a, string shengji, string shiji)
 	}
 
 
-	//¶ş¼¶µØÖ· £ºÊĞ¡¢×ÔÖÎÖİ¡¢ÃË¡¢µØÇø¡¢»®Çø 
+	//äºŒçº§åœ°å€ ï¼šå¸‚ã€è‡ªæ²»å·ã€ç›Ÿã€åœ°åŒºã€åˆ’åŒº 
 
-	fg = "ÊĞ";
+	fg = "å¸‚";
 	dz_s2 = zdjq(fg, a);
 	a = zdjq1(fg, a);
 
 	if ("" == dz_s2)
 	{
-		fg = "×ÔÖÎÖİ";
+		fg = "è‡ªæ²»å·";
 		dz_s2 = zdjq(fg, a);
 		a = zdjq1(fg, a);
 
 		if ("" == dz_s2)
 		{
-			fg = "ÃË";
+			fg = "ç›Ÿ";
 			dz_s2 = zdjq(fg, a);
 			a = zdjq1(fg, a);
 			if ("" == dz_s2)
 			{
-				fg = "µØÇø";
+				fg = "åœ°åŒº";
 				dz_s2 = zdjq(fg, a);
 				a = zdjq1(fg, a);
 				if ("" == dz_s2)
 				{
-					fg = "Çø»®";
+					fg = "åŒºåˆ’";
 					dz_s2 = zdjq(fg, a);
 					a = zdjq1(fg, a);
 				}
@@ -271,33 +271,33 @@ string quzhi(string a, string shengji, string shiji)
 		}
 	}
 	else
-	{   //Ö±Ï½ÊĞ µÄÒ»¼¶ ¸³Öµ 
+	{   //ç›´è¾–å¸‚ çš„ä¸€çº§ èµ‹å€¼ 
 		q = -1;
-		q = dz_s2.find("±±¾©");
+		q = dz_s2.find("åŒ—äº¬");
 		if (q > -1)
 		{
-			dz_s1 = "±±¾©";
+			dz_s1 = "åŒ—äº¬";
 		}
 		else
 		{
-			q = dz_s2.find("ÖØÇì");
+			q = dz_s2.find("é‡åº†");
 			if (q > -1)
 			{
-				dz_s1 = "ÖØÇì";
+				dz_s1 = "é‡åº†";
 			}
 			else
 			{
-				q = dz_s2.find("ÉÏº£");
+				q = dz_s2.find("ä¸Šæµ·");
 				if (q > -1)
 				{
-					dz_s1 = "ÉÏº£";
+					dz_s1 = "ä¸Šæµ·";
 				}
 				else
 				{
-					q = dz_s2.find("Ìì½ò");
+					q = dz_s2.find("å¤©æ´¥");
 					if (q > -1)
 					{
-						dz_s1 = "Ìì½ò";
+						dz_s1 = "å¤©æ´¥";
 					}
 				}
 			}
@@ -315,8 +315,8 @@ string quzhi(string a, string shengji, string shiji)
 			//cout<< "  shengji:"<<sj <<"   "<<q  ;
 			if (q > -1)
 			{
-				dz_s2 = a.substr(0, sj1.length()) + "ÊĞ";//»ñÈ¡ÊĞ 
-				a = a.replace(0, sj1.length(), "");//É¾µôÊĞ 
+				dz_s2 = a.substr(0, sj1.length()) + "å¸‚";//è·å–å¸‚ 
+				a = a.replace(0, sj1.length(), "");//åˆ æ‰å¸‚ 
 				break;
 			}
 			i++;
@@ -325,44 +325,44 @@ string quzhi(string a, string shengji, string shiji)
 
 
 
-	//Èı¼¶µØÖ· ÏØ¼¶ÊĞ|ÏØ|Æì|Çø
+	//ä¸‰çº§åœ°å€ å¿çº§å¸‚|å¿|æ——|åŒº
 
-	fg = "ÏØ";
+	fg = "å¿";
 	dz_s3 = zdjq(fg, a);
 	a = zdjq1(fg, a);
 	if ("" == dz_s3)
 	{
-		fg = "Çø";
+		fg = "åŒº";
 		dz_s3 = zdjq(fg, a);
 		a = zdjq1(fg, a);
 		if ("" == dz_s3)
 		{
-			fg = "Æì";
+			fg = "æ——";
 			dz_s3 = zdjq(fg, a);
 			a = zdjq1(fg, a);
 			if ("" == dz_s3)
 			{
-				fg = "ÊĞ";
+				fg = "å¸‚";
 				dz_s3 = zdjq(fg, a);
 				a = zdjq1(fg, a);
 			}
 		}
 	}
 
-	//ËÄ¼¶µØÖ· ½ÖµÀ|Õò |Ïç 
+	//å››çº§åœ°å€ è¡—é“|é•‡ |ä¹¡ 
 
-	fg = "Õò";
+	fg = "é•‡";
 	dz_s4 = zdjq(fg, a);
 	a = zdjq1(fg, a);
 	if ("" == dz_s4)
 	{
-		fg = "Ïç";
+		fg = "ä¹¡";
 		dz_s4 = zdjq(fg, a);
 		a = zdjq1(fg, a);
 		if ("" == dz_s4)
 		{
 
-			fg = "½ÖµÀ";
+			fg = "è¡—é“";
 			dz_s4 = zdjq(fg, a);
 			a = zdjq1(fg, a);
 		}
@@ -370,38 +370,38 @@ string quzhi(string a, string shengji, string shiji)
 
 	if ("1" == m)
 	{
-		//5¼¶µØÖ·
+		//5çº§åœ°å€
 
 		dz_s5 = a;
-		json = "{\"ĞÕÃû\":\"" + xm + "\",\"ÊÖ»ú\":\"" + c1 + "\",\"µØÖ·\":[\"" + dz_s1 + "\",\"" + dz_s2 + "\",\"" + dz_s3 + "\",\"" + dz_s4 + "\",\"" + dz_s5 + "\"]}";
+		json = "{\"å§“å\":\"" + xm + "\",\"æ‰‹æœº\":\"" + c1 + "\",\"åœ°å€\":[\"" + dz_s1 + "\",\"" + dz_s2 + "\",\"" + dz_s3 + "\",\"" + dz_s4 + "\",\"" + dz_s5 + "\"]}";
 
 	}
 	else
 	{
-		//5¼¶µØÖ· ½Ö|µÀ |Ïï|Â· 
+		//5çº§åœ°å€ è¡—|é“ |å··|è·¯ 
 
-		fg = "½ÖµÀ";
+		fg = "è¡—é“";
 		dz_s5 = zdjq(fg, a);
 		a = zdjq1(fg, a);
 		if ("" == dz_s5)
 		{
-			fg = "½Ö";
+			fg = "è¡—";
 			dz_s5 = zdjq(fg, a);
 			a = zdjq1(fg, a);
 			if ("" == dz_s5)
 			{
 
-				fg = "Ïï";
+				fg = "å··";
 				dz_s5 = zdjq(fg, a);
 				a = zdjq1(fg, a);
 				if ("" == dz_s5)
 				{
-					fg = "Â·";
+					fg = "è·¯";
 					dz_s5 = zdjq(fg, a);
 					a = zdjq1(fg, a);
 					if ("" == dz_s5)
 					{
-						fg = "µÀ";
+						fg = "é“";
 						dz_s5 = zdjq(fg, a);
 						a = zdjq1(fg, a);
 					}
@@ -409,8 +409,8 @@ string quzhi(string a, string shengji, string shiji)
 			}
 		}
 
-		//6¼¶µØÖ·
-		fg = "ºÅ";
+		//6çº§åœ°å€
+		fg = "å·";
 		dz_s6 = zdjq(fg, a);
 		a = zdjq1(fg, a);
 
@@ -418,11 +418,11 @@ string quzhi(string a, string shengji, string shiji)
 		q = a.find(".");
 		if (q > -1)
 		{
-			a = a.substr(0, a.find("."));//È¥³ı. 
+			a = a.substr(0, a.find("."));//å»é™¤. 
 		}
 		dz_s7 = a;
 
-		json = "{\"ĞÕÃû\":\"" + xm + "\",\"ÊÖ»ú\":\"" + c1 + "\",\"µØÖ·\":[\"" + dz_s1 + "\",\"" + dz_s2 + "\",\"" + dz_s3 + "\",\"" + dz_s4 + "\",\"" + dz_s5 + "\",\"" + dz_s6 + "\",\"" + dz_s7 + "\"]}";
+		json = "{\"å§“å\":\"" + xm + "\",\"æ‰‹æœº\":\"" + c1 + "\",\"åœ°å€\":[\"" + dz_s1 + "\",\"" + dz_s2 + "\",\"" + dz_s3 + "\",\"" + dz_s4 + "\",\"" + dz_s5 + "\",\"" + dz_s6 + "\",\"" + dz_s7 + "\"]}";
 
 	}
 
