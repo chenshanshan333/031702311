@@ -22,7 +22,7 @@ int main()
 
 	shiji = "福州、厦门、泉州、漳州、龙岩、宁德、莆田、三明、南平、南安、建瓯、建阳、永安、晋江、武夷山、漳平、石狮、福安、福清、福鼎、邵武、长乐、龙海";
 	ifstream inFile;
-	inFile.open(argc[1]); // 打开文件   
+	inFile.open(argc[1]）；// 打开文件   
 	if (inFile.is_open())
 	{ // 若成功打开文件   
 		while (!inFile.eof()) { // 若未到文件结束 
